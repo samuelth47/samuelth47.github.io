@@ -1,0 +1,248 @@
+diff --git a/.github/workflows/scrape_talks.yml b/.github/workflows/scrape_talks.yml
+deleted file mode 100644
+index fb709fb..0000000
+--- a/.github/workflows/scrape_talks.yml
++++ /dev/null
+@@ -1,39 +0,0 @@
+-name: Scrape Talk Locations
+-
+-on:
+-  push:
+-    paths:
+-      - 'talks/**'
+-      - '_talks/**'
+-      - 'talkmap.ipynb'
+-
+-jobs:
+-  build:
+-    runs-on: ubuntu-latest
+-    permissions:
+-      contents: write           # This workflow pushes to the repository
+-
+-    steps:
+-    - uses: actions/checkout@v2
+-
+-    - name: Set up Python
+-      uses: actions/setup-python@v2
+-      with:
+-        python-version: '3.9'   # Specify the Python version you need
+-
+-    - name: Install dependencies
+-      run: |
+-        pip install jupyter pandas requests beautifulsoup4 geopy  # Add other dependencies as needed
+-        pip install getorg --upgrade
+-
+-    - name: Run Jupyter Notebook
+-      run: |
+-        jupyter nbconvert --to notebook --execute talkmap.ipynb --output talkmap_out.ipynb
+-
+-    - name: Commit changes
+-      run: |
+-        git config user.name "github-actions[bot]"
+-        git config user.email "github-actions[bot]@users.noreply.github.com"
+-        git add .
+-        git commit -m "Automated update of talk locations" || echo "No changes to commit"
+-        git push
+diff --git a/_pages/about.md b/_pages/about.md
+index 4a41da4..bb47d2a 100644
+--- a/_pages/about.md
++++ b/_pages/about.md
+@@ -1,29 +1,38 @@
+ ---
+ permalink: /
+-title: "Samuel Haileselassie"
++title: ""
+ author_profile: true
+ redirect_from:
+   - /about/
+   - /about.html
+ ---
+ 
+-## Software Engineer building reliable, useful systems
+-
+-I am a Software Engineer II and M.S. Artificial Intelligence student at San Jose State University. My experience spans backend and full-stack development, infrastructure automation, deployment tooling, monitoring, and applied AI.
+-
+-At Bank of America, I built Django applications, automated VMware infrastructure with Ansible, integrated systems through REST APIs, and designed monitoring dashboards that improved operational response. I enjoy turning manual, error-prone processes into dependable software.
+-
+-I am currently pursuing software engineering and applied AI opportunities where I can contribute to products, platforms, and engineering systems that have measurable impact.
+-
+-## What I work with
+-
+-- **Software engineering:** Python, Django, JavaScript, TypeScript, React, REST APIs, SQL
+-- **Infrastructure and automation:** Ansible, Docker, VMware, OpenShift, CI/CD, Git
+-- **Data and AI:** PostgreSQL, MongoDB, recommendation systems, model evaluation
+-
+-## Explore my work
+-
+-- [View my projects](/portfolio/)
+-- [View my resume](/cv/)
+-- [Connect with me on LinkedIn](https://linkedin.com/in/samuel-haileselassie)
+-- [View my code on GitHub](https://github.com/samuelth47)
++<section class="home-hero">
++  <div class="home-hero__eyebrow">Software Engineer · AI Graduate Student</div>
++  <h1>Building reliable software that makes complex work simpler.</h1>
++  <p>I’m Samuel Haileselassie, a Software Engineer II and M.S. Artificial Intelligence student at San Jose State University. I build backend systems, automation platforms, and practical AI applications that turn manual processes into dependable workflows.</p>
++  <div class="home-actions">
++    <a href="/portfolio/">View my projects</a>
++    <a href="/cv/">View my resume</a>
++    <a href="https://www.linkedin.com/in/samuel-haileselassie">Connect on LinkedIn</a>
++  </div>
++</section>
++
++## About me
++
++At Bank of America, I built Django applications, automated VMware infrastructure with Ansible, integrated systems through REST APIs, and designed monitoring dashboards that improved operational response. I enjoy working across application code and infrastructure to deliver software that is useful, measurable, and maintainable.
++
++<h2 class="home-section-title">Technical focus</h2>
++<div class="home-skill-grid">
++  <div class="home-skill-card"><strong>Software engineering</strong><span>Python, Django, JavaScript, TypeScript, React, REST APIs, SQL</span></div>
++  <div class="home-skill-card"><strong>Infrastructure and automation</strong><span>Ansible, Docker, VMware, OpenShift, CI/CD, Git</span></div>
++  <div class="home-skill-card"><strong>Data and AI</strong><span>PostgreSQL, MongoDB, recommendation systems, model evaluation</span></div>
++  <div class="home-skill-card"><strong>Monitoring and operations</strong><span>Grafana, Splunk, deployment tooling, diagnostics, reliability</span></div>
++</div>
++
++<h2 class="home-section-title">Selected projects</h2>
++<div class="home-project-grid">
++  <div class="home-project-card"><strong>Course Schedulizer</strong><p>React and TypeScript application used by Computer Science faculty to manage conflict-free semester schedules.</p><a href="/portfolio/course-schedulizer/">Read more</a></div>
++  <div class="home-project-card"><strong>CalTrip</strong><p>React Native travel-planning application developed and deployed for approximately 100–200 students.</p><a href="/portfolio/caltrip/">Read more</a></div>
++  <div class="home-project-card"><strong>Music Recommender</strong><p>Python recommendation system focused on explainability, ranking behavior, and potential bias.</p><a href="/portfolio/music-recommender/">Read more</a></div>
++</div>
+diff --git a/_sass/_custom.scss b/_sass/_custom.scss
+new file mode 100644
+index 0000000..6c96b98
+--- /dev/null
++++ b/_sass/_custom.scss
+@@ -0,0 +1,117 @@
++/* Professional portfolio refinements */
++
++.page__content {
++  max-width: 900px;
++}
++
++.home-hero {
++  background: linear-gradient(135deg, #f4f8ff 0%, #ffffff 72%);
++  border: 1px solid #dce7f5;
++  border-left: 4px solid #2f6fbd;
++  border-radius: 12px;
++  padding: 2rem 2.25rem;
++  margin-bottom: 2rem;
++}
++
++.home-hero__eyebrow {
++  color: #2f6fbd;
++  font-size: 0.8rem;
++  font-weight: 700;
++  letter-spacing: 0.12em;
++  text-transform: uppercase;
++  margin-bottom: 0.75rem;
++}
++
++.home-hero h1 {
++  font-size: clamp(2rem, 4vw, 3.1rem);
++  line-height: 1.08;
++  margin: 0 0 0.85rem;
++}
++
++.home-hero p {
++  font-size: 1.08rem;
++  line-height: 1.7;
++  margin-bottom: 0;
++  max-width: 720px;
++}
++
++.home-actions {
++  display: flex;
++  flex-wrap: wrap;
++  gap: 0.75rem;
++  margin-top: 1.4rem;
++}
++
++.home-actions a {
++  border: 1px solid #2f6fbd;
++  border-radius: 6px;
++  display: inline-block;
++  font-weight: 700;
++  padding: 0.65rem 1rem;
++  text-decoration: none;
++}
++
++.home-actions a:first-child {
++  background: #2f6fbd;
++  color: #fff;
++}
++
++.home-actions a:not(:first-child) {
++  color: #2f6fbd;
++}
++
++.home-section-title {
++  border-bottom: 1px solid #e2e8f0;
++  margin-top: 2.1rem;
++  padding-bottom: 0.55rem;
++}
++
++.home-skill-grid,
++.home-project-grid {
++  display: grid;
++  gap: 1rem;
++  grid-template-columns: repeat(2, minmax(0, 1fr));
++  margin-top: 1rem;
++}
++
++.home-skill-card,
++.home-project-card {
++  background: #fff;
++  border: 1px solid #e2e8f0;
++  border-radius: 8px;
++  padding: 1rem 1.1rem;
++}
++
++.home-skill-card strong,
++.home-project-card strong {
++  color: #26384d;
++  display: block;
++  margin-bottom: 0.35rem;
++}
++
++.home-skill-card span,
++.home-project-card p {
++  color: #536273;
++  font-size: 0.92rem;
++  line-height: 1.55;
++}
++
++.home-project-card p {
++  margin: 0 0 0.65rem;
++}
++
++.home-project-card a {
++  font-size: 0.9rem;
++  font-weight: 700;
++}
++
++@media (max-width: 600px) {
++  .home-hero {
++    padding: 1.35rem;
++  }
++
++  .home-skill-grid,
++  .home-project-grid {
++    grid-template-columns: 1fr;
++  }
++}
+diff --git a/assets/css/main.scss b/assets/css/main.scss
+index 761e33a..54175b0 100644
+--- a/assets/css/main.scss
++++ b/assets/css/main.scss
+@@ -37,7 +37,9 @@
+     "layout/sidebar",
+     "layout/json_cv",
+ 
++    "custom",
++
+     "vendor/font-awesome/fontawesome",
+     "vendor/font-awesome/solid",
+     "vendor/font-awesome/brands"
+-;
+\ No newline at end of file
++;

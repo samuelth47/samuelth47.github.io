@@ -1,0 +1,714 @@
+diff --git a/_config.yml b/_config.yml
+index 67c1168..9dea459 100644
+--- a/_config.yml
++++ b/_config.yml
+@@ -9,14 +9,14 @@
+ # Basic Site Settings
+ locale                   : "en-US"
+ site_theme               : "default" # Currently available options are "default", "air"
+-title                    : "Samuel's Homepage"
++title                    : "Samuel Haileselassie"
+ title_separator          : "-"
+ name                     : &name "Samuel Haileselassie"
+-description              : &description "Your Name's academic portfolio"   # Update this with a general description of your site, this is the default if not overridden by a page
+-url                      : https://academicpages.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
++description              : &description "Software Engineer II and M.S. Artificial Intelligence student building reliable software, automation systems, and practical AI solutions."
++url                      : https://samuelth47.github.io
+                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
+ baseurl                  : "" # the subpath of your site, e.g. "/blog"
+-repository               : "academicpages/academicpages.github.io"
++repository               : "samuelth47/samuelth47.github.io"
+ 
+ # Site Author - The following control what appear as part of the author content on the side bar.
+ #               If a field is blank the icon and link will not appear, otherwise it will be shown.
+@@ -26,22 +26,22 @@ author:
+   avatar           : "profile.png"
+   name             : "Samuel Haileselassie"
+   pronouns         : # example: "she/her"  
+-  bio              : "Short biography for the left-hand sidebar"
+-  location         : "NY"
+-  employer         : "Bank of America"
++  bio              : "Software Engineer II and M.S. Artificial Intelligence student"
++  location         : "Gilroy, CA"
++  employer         : "San Jose State University"
+   uri              : # URL
+   email            : "samuel.hailesellasie@gmail.com" 
+ 
+   # Academic websites
+   academia         : # URL
+   arxiv            : # URL - Update with the correct link to your profile
+-  googlescholar    : "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
++  googlescholar    :
+   inspire-hep      : # URL
+   impactstory      : # URL
+-  orcid            : "https://orcid.org/yourorcidurl"
++  orcid            :
+   semantic         : # URL
+   ssrn             : # URL
+-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
++  pubmed           :
+   researchgate     : # URL
+   scopus           : # URL
+   zotero           : # URL
+@@ -51,13 +51,13 @@ author:
+   bitbucket        : # Username - Update with your username on the site
+   codepen          : # Username
+   dribbble         : # Username
+-  github           : "academicpages"
++  github           : "samuelth47"
+   kaggle           : # Username  
+   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
+ 
+   # Social media
+   artstation       : # Username
+-  bluesky          : "bsky.app" # Replace this with you Bluesky username
++  bluesky          :
+   facebook         : # Username
+   flickr           : # Username
+   foursquare       : # Username
+@@ -66,7 +66,7 @@ author:
+   keybase          : # Username
+   instagram        : # Username
+   lastfm           : # Username
+-  linkedin         : # Username
++  linkedin         : "samuel-haileselassie"
+   mastodon         : # URL
+   medium           : # URL
+   pinterest        : # Username
+diff --git a/_data/navigation.yml b/_data/navigation.yml
+index ec7bf93..80fc1a6 100644
+--- a/_data/navigation.yml
++++ b/_data/navigation.yml
+@@ -8,26 +8,8 @@
+ #      Markdown formatted page while the second is generated using JSON.
+ 
+ main:
+-  - title: "Publications"
+-    url: /publications/
+-
+-  - title: "Talks"
+-    url: /talks/    
+-
+-  - title: "Teaching"
+-    url: /teaching/    
+-    
+-  - title: "Portfolio"
++  - title: "Projects"
+     url: /portfolio/
+-        
+-  - title: "Blog Posts"
+-    url: /year-archive/
+-    
+-  - title: "CV"
++
++  - title: "Resume"
+     url: /cv/
+-    
+-  # - title: "CV"
+-  #   url: /cv-json/
+-    
+-  - title: "Guide"
+-    url: /markdown/
+diff --git a/_pages/about.md b/_pages/about.md
+index 492fccc..4a41da4 100644
+--- a/_pages/about.md
++++ b/_pages/about.md
+@@ -1,56 +1,29 @@
+ ---
+ permalink: /
+-title: "Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites"
++title: "Samuel Haileselassie"
+ author_profile: true
+-redirect_from: 
++redirect_from:
+   - /about/
+   - /about.html
+ ---
+ 
+-This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. Incidentally, these same features make it a great template for anyone that needs to show off a professional template!
++## Software Engineer building reliable, useful systems
+ 
+- You can fork [this template](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and Markdown files, add your own PDFs and other content, and have your own site for free, with no ads!
++I am a Software Engineer II and M.S. Artificial Intelligence student at San Jose State University. My experience spans backend and full-stack development, infrastructure automation, deployment tooling, monitoring, and applied AI.
+ 
+-A data-driven personal website
+-======
+-Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website's content from its form. The content & metadata of your website are in structured Markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various Markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
++At Bank of America, I built Django applications, automated VMware infrastructure with Ansible, integrated systems through REST APIs, and designed monitoring dashboards that improved operational response. I enjoy turning manual, error-prone processes into dependable software.
+ 
+-Many of the features of dynamic content management systems (like Wordpress) can be achieved in this fashion, using a fraction of the computational resources and with far less vulnerability to hacking and DDoSing. You can also modify the theme to your heart's content without touching the content of your site. If you get to a point where you've broken something in Jekyll/HTML/CSS beyond repair, your Markdown files describing your talks, publications, etc. are safe. You can rollback the changes or even delete the repository and start over - just be sure to save the Markdown files! You can also write scripts that process the structured data on the site, such as [this one](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb) that analyzes metadata in pages about talks to display [a map of every location you've given a talk](https://academicpages.github.io/talkmap.html).
++I am currently pursuing software engineering and applied AI opportunities where I can contribute to products, platforms, and engineering systems that have measurable impact.
+ 
+-For those users that need more advanced functionality, the template also supports the following popular tools:
+-- [MathJax](https://www.mathjax.org/) for mathematical equations
+-- [Mermaid](https://mermaid.js.org/) for diagraming
+-- [Plotly](https://plotly.com/javascript/) for plotting
++## What I work with
+ 
+-Getting started
+-======
+-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
+-1. Fork [this template](https://github.com/academicpages/academicpages.github.io) by clicking the "Use this template" button in the top right. 
+-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
+-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](https://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
+-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
+-1. Check status by going to the repository settings, in the "GitHub pages" section
++- **Software engineering:** Python, Django, JavaScript, TypeScript, React, REST APIs, SQL
++- **Infrastructure and automation:** Ansible, Docker, VMware, OpenShift, CI/CD, Git
++- **Data and AI:** PostgreSQL, MongoDB, recommendation systems, model evaluation
+ 
+-Site-wide configuration
+-------
+-The main configuration file for the site is in the base directory in [_config.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_config.yml), which defines the content in the sidebars and other site-wide features. You will need to replace the default variables with ones about yourself and your site's github repository. The configuration file for the top menu is in [_data/navigation.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_data/navigation.yml). For example, if you don't have a portfolio or blog posts, you can remove those items from that navigation.yml file to remove them from the header. 
++## Explore my work
+ 
+-Create content & metadata
+-------
+-For site content, there is one Markdown file for each type of content, which are stored in directories like _publications, _talks, _posts, _teaching, or _pages. For example, each talk is a Markdown file in the [_talks directory](https://github.com/academicpages/academicpages.github.io/tree/master/_talks). At the top of each Markdown file is structured data in YAML about the talk, which the theme will parse to do lots of cool stuff. The same structured data about a talk is used to generate the list of talks on the [Talks page](https://academicpages.github.io/talks), each [individual page](https://academicpages.github.io/talks/2012-03-01-talk-1) for specific talks, the talks section for the [CV page](https://academicpages.github.io/cv), and the [map of places you've given a talk](https://academicpages.github.io/talkmap.html) (if you run this [python file](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.py) or [Jupyter notebook](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb), which creates the HTML for the map based on the contents of the _talks directory).
+-
+-**Markdown generator**
+-
+-The repository includes [a set of Jupyter notebooks](https://github.com/academicpages/academicpages.github.io/tree/master/markdown_generator
+-) that converts a CSV containing structured data about talks or presentations into individual Markdown files that will be properly formatted for the Academic Pages template. The sample CSVs in that directory are the ones I used to create my own personal website at stuartgeiger.com. My usual workflow is that I keep a spreadsheet of my publications and talks, then run the code in these notebooks to generate the Markdown files, then commit and push them to the GitHub repository.
+-
+-How to edit your site's GitHub repository
+-------
+-Many people use a git client to create files on their local computer and then push them to GitHub's servers. If you are not familiar with git, you can directly edit these configuration and Markdown files directly in the github.com interface. Navigate to a file (like [this one](https://github.com/academicpages/academicpages.github.io/blob/master/_talks/2012-03-01-talk-1.md) and click the pencil icon in the top right of the content preview (to the right of the "Raw | Blame | History" buttons). You can delete a file by clicking the trashcan icon to the right of the pencil icon. You can also create new files or upload files by navigating to a directory and clicking the "Create new file" or "Upload files" buttons. 
+-
+-Example: editing a Markdown file for a talk
+-![Editing a Markdown file for a talk](/images/editing-talk.png)
+-
+-For more info
+-------
+-More info about configuring Academic Pages can be found in [the guide](https://academicpages.github.io/markdown/), the [growing wiki](https://github.com/academicpages/academicpages.github.io/wiki), and you can always [ask a question on GitHub](https://github.com/academicpages/academicpages.github.io/discussions). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
++- [View my projects](/portfolio/)
++- [View my resume](/cv/)
++- [Connect with me on LinkedIn](https://linkedin.com/in/samuel-haileselassie)
++- [View my code on GitHub](https://github.com/samuelth47)
+diff --git a/_pages/cv.md b/_pages/cv.md
+index 5e1f08a..70f32c5 100644
+--- a/_pages/cv.md
++++ b/_pages/cv.md
+@@ -1,64 +1,46 @@
+ ---
+ layout: archive
+-title: "CV"
++title: "Resume"
+ permalink: /cv/
+ author_profile: true
+ redirect_from:
+   - /resume
+ ---
+ 
+-{% include base_path %}
++## Education
+ 
+-Education
+-======
+-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+-* M.S. in Jekyll, GitHub University, 2014
+-* B.S. in GitHub, GitHub University, 2012
++**San Jose State University** — M.S. in Artificial Intelligence, expected May 2028<br>
++GPA: 4.0 · San Jose, CA
+ 
+-Work experience
+-======
+-* Spring 2024: Academic Pages Collaborator
+-  * GitHub University
+-  * Duties includes: Updates and improvements to template
+-  * Supervisor: The Users
++**Calvin University** — B.S. in Computer Science, Apr 2023<br>
++Magna Cum Laude · GPA: 3.853 · Grand Rapids, MI
+ 
+-* Fall 2015: Research Assistant
+-  * GitHub University
+-  * Duties included: Merging pull requests
+-  * Supervisor: Professor Hub
++## Experience
+ 
+-* Summer 2015: Research Assistant
+-  * GitHub University
+-  * Duties included: Tagging issues
+-  * Supervisor: Professor Git
+-  
+-Skills
+-======
+-* Skill 1
+-* Skill 2
+-  * Sub-skill 2.1
+-  * Sub-skill 2.2
+-  * Sub-skill 2.3
+-* Skill 3
++**Bank of America — Software Engineer II**<br>
++Jul 2023 – Jun 2026 · New York, NY
+ 
+-Publications
+-======
+-  <ul>{% for post in site.publications reversed %}
+-    {% include archive-single-cv.html %}
+-  {% endfor %}</ul>
+-  
+-Talks
+-======
+-  <ul>{% for post in site.talks reversed %}
+-    {% include archive-single-talk-cv.html  %}
+-  {% endfor %}</ul>
+-  
+-Teaching
+-======
+-  <ul>{% for post in site.teaching reversed %}
+-    {% include archive-single-cv.html %}
+-  {% endfor %}</ul>
+-  
+-Service and leadership
+-======
+-* Currently signed in to 43 different slack teams
++- Automated VMware infrastructure deployment and configuration with Ansible and led a cross-team effort to automate complete cluster builds.
++- Built Django applications that reduced manual data-entry time by approximately 90% and helped containerize multiple services under a unified frontend.
++- Designed Grafana dashboards for Ansible jobs, cutting error response time by 5×, and integrated automation pipelines with REST APIs, reducing errors by approximately 40%.
++
++**Bank of America — Software Engineer Intern**<br>
++Jun 2022 – Aug 2022 · Richmond, VA
++
++- Built a Django application with a searchable database, reducing record lookup time from several minutes to seconds.
++- Converted Excel-based processes into a web application, reducing data-entry processing time from several days to under one hour and eliminating approximately 20 hours of manual work per week.
++
++**Calvin University — Research Assistant**<br>
++May 2021 – Aug 2021 · Grand Rapids, MI
++
++- Upgraded Thread-Safe Graphics Library visualization modules from 2D to 3D and built multithreaded simulations demonstrating concurrency behavior.
++- Built cross-platform installers and documentation for macOS, Linux, and Windows, reducing student help requests by approximately 33%.
++
++## Technical skills
++
++**Languages:** Python, JavaScript, TypeScript, SQL, C++, Bash, C#<br>
++**Web:** Django, React, REST APIs, HTML, CSS<br>
++**DevOps:** Git, Docker, Ansible, XL Release, Artifactory, HashiCorp Vault<br>
++**Infrastructure:** VMware vCenter/vSphere/ESXi, OpenShift<br>
++**Databases and monitoring:** PostgreSQL, MongoDB, Grafana, Splunk<br>
++**Testing:** Unit testing, integration testing, pytest
+diff --git a/_portfolio/caltrip.md b/_portfolio/caltrip.md
+new file mode 100644
+index 0000000..de2c491
+--- /dev/null
++++ b/_portfolio/caltrip.md
+@@ -0,0 +1,11 @@
++---
++title: "CalTrip"
++excerpt: "Mobile travel-planning application built and deployed by a four-person Agile team."
++collection: portfolio
++---
++
++Collaborated in a four-person Agile team to develop and deploy a mobile travel-planning application used by approximately 100--200 students. The application centralized trip information and simplified itinerary planning.
++
++**Technologies:** React Native, Heroku, Agile development
++
++[View the project on GitHub](https://github.com/calvin-cs262-fall2021-teamC)
+diff --git a/_portfolio/course-schedulizer.md b/_portfolio/course-schedulizer.md
+new file mode 100644
+index 0000000..650e7e3
+--- /dev/null
++++ b/_portfolio/course-schedulizer.md
+@@ -0,0 +1,11 @@
++---
++title: "Course Schedulizer"
++excerpt: "Faculty scheduling application used by the Computer Science department."
++collection: portfolio
++---
++
++Developed a web application used by the Computer Science department head and faculty to create and manage conflict-free semester schedules, streamlining the course-scheduling process.
++
++**Technologies:** React, TypeScript, GitHub Actions, Gitflow
++
++[View the project on GitHub](https://github.com/senior-knights/course-schedulizer)
+diff --git a/_portfolio/music-recommender.md b/_portfolio/music-recommender.md
+new file mode 100644
+index 0000000..a52373c
+--- /dev/null
++++ b/_portfolio/music-recommender.md
+@@ -0,0 +1,11 @@
++---
++title: "Music Recommender"
++excerpt: "Explainable content-based recommendation system built with Python."
++collection: portfolio
++---
++
++Built an explainable content-based recommendation system that ranks songs using user preferences such as genre, mood, and energy. Evaluated feature-weight sensitivity and adversarial user profiles to identify potential ranking bias.
++
++**Technologies:** Python, recommendation systems, model evaluation
++
++[View the project on GitHub](https://github.com/samuelth47/ai110-module3show-musicrecommendersimulation-starter)
+diff --git a/_portfolio/portfolio-1.md b/_portfolio/portfolio-1.md
+deleted file mode 100644
+index 847af9e..0000000
+--- a/_portfolio/portfolio-1.md
++++ /dev/null
+@@ -1,7 +0,0 @@
+----
+-title: "Portfolio item number 1"
+-excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+-collection: portfolio
+----
+-
+-This is an item in your portfolio. It can be have images or nice text. If you name the file .md, it will be parsed as markdown. If you name the file .html, it will be parsed as HTML. 
+diff --git a/_portfolio/portfolio-2.html b/_portfolio/portfolio-2.html
+deleted file mode 100644
+index 8a0c6eb..0000000
+--- a/_portfolio/portfolio-2.html
++++ /dev/null
+@@ -1,7 +0,0 @@
+----
+-title: "Portfolio item number 2"
+-excerpt: "Short description of portfolio item number 2 <br/><img src='/images/500x300.png'>"
+-collection: portfolio
+----
+-
+-This is an item in your portfolio. It can be have images or nice text. If you name the file .md, it will be parsed as markdown. If you name the file .html, it will be parsed as HTML. 
+diff --git a/_posts/2012-08-14-blog-post-1.md b/_posts/2012-08-14-blog-post-1.md
+deleted file mode 100644
+index 8d4819a..0000000
+--- a/_posts/2012-08-14-blog-post-1.md
++++ /dev/null
+@@ -1,20 +0,0 @@
+----
+-title: 'Blog Post number 1'
+-date: 2012-08-14
+-permalink: /posts/2012/08/blog-post-1/
+-tags:
+-  - cool posts
+-  - category1
+-  - category2
+----
+-
+-This is a sample blog post. Lorem ipsum I can't remember the rest of lorem ipsum and don't have an internet connection right now. Testing testing testing this blog post. Blog posts are cool.
+-
+-Headings are cool
+-======
+-
+-You can have many headings
+-======
+-
+-Aren't headings cool?
+-------
+\ No newline at end of file
+diff --git a/_posts/2013-08-14-blog-post-2.md b/_posts/2013-08-14-blog-post-2.md
+deleted file mode 100644
+index f5c960d..0000000
+--- a/_posts/2013-08-14-blog-post-2.md
++++ /dev/null
+@@ -1,20 +0,0 @@
+----
+-title: 'Blog Post number 2'
+-date: 2013-08-14
+-permalink: /posts/2013/08/blog-post-2/
+-tags:
+-  - cool posts
+-  - category1
+-  - category2
+----
+-
+-This is a sample blog post. Lorem ipsum I can't remember the rest of lorem ipsum and don't have an internet connection right now. Testing testing testing this blog post. Blog posts are cool.
+-
+-Headings are cool
+-======
+-
+-You can have many headings
+-======
+-
+-Aren't headings cool?
+-------
+\ No newline at end of file
+diff --git a/_posts/2014-08-14-blog-post-3.md b/_posts/2014-08-14-blog-post-3.md
+deleted file mode 100644
+index 83175c7..0000000
+--- a/_posts/2014-08-14-blog-post-3.md
++++ /dev/null
+@@ -1,20 +0,0 @@
+----
+-title: 'Blog Post number 3'
+-date: 2014-08-14
+-permalink: /posts/2014/08/blog-post-3/
+-tags:
+-  - cool posts
+-  - category1
+-  - category2
+----
+-
+-This is a sample blog post. Lorem ipsum I can't remember the rest of lorem ipsum and don't have an internet connection right now. Testing testing testing this blog post. Blog posts are cool. 
+-
+-Headings are cool
+-======
+-
+-You can have many headings
+-======
+-
+-Aren't headings cool?
+-------
+\ No newline at end of file
+diff --git a/_posts/2015-08-14-blog-post-4.md b/_posts/2015-08-14-blog-post-4.md
+deleted file mode 100644
+index 9e882e6..0000000
+--- a/_posts/2015-08-14-blog-post-4.md
++++ /dev/null
+@@ -1,20 +0,0 @@
+----
+-title: 'Blog Post number 4'
+-date: 2015-08-14
+-permalink: /posts/2012/08/blog-post-4/
+-tags:
+-  - cool posts
+-  - category1
+-  - category2
+----
+-
+-This is a sample blog post. Lorem ipsum I can't remember the rest of lorem ipsum and don't have an internet connection right now. Testing testing testing this blog post. Blog posts are cool.
+-
+-Headings are cool
+-======
+-
+-You can have many headings
+-======
+-
+-Aren't headings cool?
+-------
+\ No newline at end of file
+diff --git a/_posts/2199-01-01-future-post.md b/_posts/2199-01-01-future-post.md
+deleted file mode 100644
+index e96eb5e..0000000
+--- a/_posts/2199-01-01-future-post.md
++++ /dev/null
+@@ -1,11 +0,0 @@
+----
+-title: 'Future Blog Post'
+-date: 2199-01-01
+-permalink: /posts/2012/08/blog-post-4/
+-tags:
+-  - cool posts
+-  - category1
+-  - category2
+----
+-
+-This post will show up by default. To disable scheduling of future posts, edit `config.yml` and set `future: false`. 
+diff --git a/_publications/2009-10-01-paper-title-number-1.md b/_publications/2009-10-01-paper-title-number-1.md
+deleted file mode 100644
+index 599bfec..0000000
+--- a/_publications/2009-10-01-paper-title-number-1.md
++++ /dev/null
+@@ -1,14 +0,0 @@
+----
+-title: "Paper Title Number 1"
+-collection: publications
+-category: manuscripts
+-permalink: /publication/2009-10-01-paper-title-number-1
+-excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
+-date: 2009-10-01
+-venue: 'Journal 1'
+-slidesurl: 'https://academicpages.github.io/files/slides1.pdf'
+-paperurl: 'https://academicpages.github.io/files/paper1.pdf'
+-bibtexurl: 'https://academicpages.github.io/files/bibtex1.bib'
+-citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
+----
+-The contents above will be part of a list of publications, if the user clicks the link for the publication than the contents of section will be rendered as a full page, allowing you to provide more information about the paper for the reader. When publications are displayed as a single page, the contents of the above "citation" field will automatically be included below this section in a smaller font.
+diff --git a/_publications/2010-10-01-paper-title-number-2.md b/_publications/2010-10-01-paper-title-number-2.md
+deleted file mode 100644
+index be1801b..0000000
+--- a/_publications/2010-10-01-paper-title-number-2.md
++++ /dev/null
+@@ -1,14 +0,0 @@
+----
+-title: "Paper Title Number 2"
+-collection: publications
+-category: manuscripts
+-permalink: /publication/2010-10-01-paper-title-number-2
+-excerpt: 'This paper is about the number 2. The number 3 is left for future work.'
+-date: 2010-10-01
+-venue: 'Journal 1'
+-slidesurl: 'https://academicpages.github.io/files/slides2.pdf'
+-paperurl: 'https://academicpages.github.io/files/paper2.pdf'
+-citation: 'Your Name, You. (2010). &quot;Paper Title Number 2.&quot; <i>Journal 1</i>. 1(2).'
+----
+-
+-The contents above will be part of a list of publications, if the user clicks the link for the publication than the contents of section will be rendered as a full page, allowing you to provide more information about the paper for the reader. When publications are displayed as a single page, the contents of the above "citation" field will automatically be included below this section in a smaller font.
+diff --git a/_publications/2015-10-01-paper-title-number-3.md b/_publications/2015-10-01-paper-title-number-3.md
+deleted file mode 100644
+index 630775c..0000000
+--- a/_publications/2015-10-01-paper-title-number-3.md
++++ /dev/null
+@@ -1,14 +0,0 @@
+----
+-title: "Paper Title Number 3"
+-collection: publications
+-category: manuscripts
+-permalink: /publication/2015-10-01-paper-title-number-3
+-excerpt: 'This paper is about the number 3. The number 4 is left for future work.'
+-date: 2015-10-01
+-venue: 'Journal 1'
+-slidesurl: 'https://academicpages.github.io/files/slides3.pdf'
+-paperurl: 'https://academicpages.github.io/files/paper3.pdf'
+-citation: 'Your Name, You. (2015). &quot;Paper Title Number 3.&quot; <i>Journal 1</i>. 1(3).'
+----
+-
+-The contents above will be part of a list of publications, if the user clicks the link for the publication than the contents of section will be rendered as a full page, allowing you to provide more information about the paper for the reader. When publications are displayed as a single page, the contents of the above "citation" field will automatically be included below this section in a smaller font.
+diff --git a/_publications/2024-02-17-paper-title-number-4.md b/_publications/2024-02-17-paper-title-number-4.md
+deleted file mode 100644
+index 2e9864e..0000000
+--- a/_publications/2024-02-17-paper-title-number-4.md
++++ /dev/null
+@@ -1,13 +0,0 @@
+----
+-title: "Paper Title Number 4"
+-collection: publications
+-category: conferences
+-permalink: /publication/2024-02-17-paper-title-number-4
+-excerpt: 'This paper is about fixing template issue #693.'
+-date: 2024-02-17
+-venue: 'GitHub Journal of Bugs'
+-paperurl: 'https://academicpages.github.io/files/paper3.pdf'
+-citation: 'Your Name, You. (2024). &quot;Paper Title Number 3.&quot; <i>GitHub Journal of Bugs</i>. 1(3).'
+----
+-
+-The contents above will be part of a list of publications, if the user clicks the link for the publication than the contents of section will be rendered as a full page, allowing you to provide more information about the paper for the reader. When publications are displayed as a single page, the contents of the above "citation" field will automatically be included below this section in a smaller font.
+diff --git a/_publications/2025-06-08-paper-title-number-5.md b/_publications/2025-06-08-paper-title-number-5.md
+deleted file mode 100644
+index f2dde40..0000000
+--- a/_publications/2025-06-08-paper-title-number-5.md
++++ /dev/null
+@@ -1,13 +0,0 @@
+----
+-title: "Paper Title Number 5, with math $$E=mc^2$$"
+-collection: publications
+-category: conferences
+-permalink: /publication/2024-02-17-paper-title-number-4
+-excerpt: 'This paper is about a famous math equation, $$E=mc^2$$'
+-date: 2024-02-17
+-venue: 'GitHub Journal of Bugs'
+-paperurl: 'https://academicpages.github.io/files/paper3.pdf'
+-citation: 'Your Name, You. (2024). &quot;Paper Title Number 3.&quot; <i>GitHub Journal of Bugs</i>. 1(3).'
+----
+-
+-Using [MathJax](https://www.mathjax.org/) in the description is supported - $$E=mc^2$$ - however, the use must be mindful that the default delimiters are `$$...$$` and `\\[...\\]` which differs from the `$...$` that is typically expected.
+diff --git a/_talks/2012-03-01-talk-1.md b/_talks/2012-03-01-talk-1.md
+deleted file mode 100644
+index b9416d4..0000000
+--- a/_talks/2012-03-01-talk-1.md
++++ /dev/null
+@@ -1,11 +0,0 @@
+----
+-title: "Talk 1 on Relevant Topic in Your Field"
+-collection: talks
+-type: "Talk"
+-permalink: /talks/2012-03-01-talk-1
+-venue: "UC San Francisco, Department of Testing"
+-date: 2012-03-01
+-location: "San Francisco, CA, USA"
+----
+-
+-This is a description of your talk, which is a markdown file that can be all markdown-ified like any other post. Yay markdown!
+diff --git a/_talks/2013-03-01-tutorial-1.md b/_talks/2013-03-01-tutorial-1.md
+deleted file mode 100644
+index 0a6e069..0000000
+--- a/_talks/2013-03-01-tutorial-1.md
++++ /dev/null
+@@ -1,13 +0,0 @@
+----
+-title: "Tutorial 1 on Relevant Topic in Your Field"
+-collection: talks
+-type: "Tutorial"
+-permalink: /talks/2013-03-01-tutorial-1
+-venue: "UC-Berkeley Institute for Testing Science"
+-date: 2013-03-01
+-location: "Berkeley, CA, USA"
+----
+-
+-[More information here](http://exampleurl.com)
+-
+-This is a description of your tutorial, note the different field in type. This is a markdown files that can be all markdown-ified like any other post. Yay markdown!
+diff --git a/_talks/2014-02-01-talk-2.md b/_talks/2014-02-01-talk-2.md
+deleted file mode 100644
+index 0fc6b14..0000000
+--- a/_talks/2014-02-01-talk-2.md
++++ /dev/null
+@@ -1,13 +0,0 @@
+----
+-title: "Talk 2 on Relevant Topic in Your Field"
+-collection: talks
+-type: "Talk"
+-permalink: /talks/2014-02-01-talk-2
+-venue: "London School of Testing"
+-date: 2014-02-01
+-location: "London, UK"
+----
+-
+-[More information here](http://example2.com)
+-
+-This is a description of your talk, which is a markdown files that can be all markdown-ified like any other post. Yay markdown!
+diff --git a/_talks/2014-03-01-talk-3.md b/_talks/2014-03-01-talk-3.md
+deleted file mode 100644
+index 558a5b7..0000000
+--- a/_talks/2014-03-01-talk-3.md
++++ /dev/null
+@@ -1,11 +0,0 @@
+----
+-title: "Conference Proceeding talk 3 on Relevant Topic in Your Field"
+-collection: talks
+-type: "Conference proceedings talk"
+-permalink: /talks/2014-03-01-talk-3
+-venue: "Testing Institute of America 2014 Annual Conference"
+-date: 2014-03-01
+-location: "Los Angeles, CA, USA"
+----
+-
+-This is a description of your conference proceedings talk, note the different field in type. You can put anything in this field.
+diff --git a/_teaching/2014-spring-teaching-1.md b/_teaching/2014-spring-teaching-1.md
+deleted file mode 100644
+index e354740..0000000
+--- a/_teaching/2014-spring-teaching-1.md
++++ /dev/null
+@@ -1,20 +0,0 @@
+----
+-title: "Teaching experience 1"
+-collection: teaching
+-type: "Undergraduate course"
+-permalink: /teaching/2014-spring-teaching-1
+-venue: "University 1, Department"
+-date: 2014-01-01
+-location: "City, Country"
+----
+-
+-This is a description of a teaching experience. You can use markdown like any other post.
+-
+-Heading 1
+-======
+-
+-Heading 2
+-======
+-
+-Heading 3
+-======
+\ No newline at end of file
+diff --git a/_teaching/2015-spring-teaching-2.md b/_teaching/2015-spring-teaching-2.md
+deleted file mode 100644
+index 58e1ddb..0000000
+--- a/_teaching/2015-spring-teaching-2.md
++++ /dev/null
+@@ -1,20 +0,0 @@
+----
+-title: "Teaching experience 2"
+-collection: teaching
+-type: "Workshop"
+-permalink: /teaching/2015-spring-teaching-1
+-venue: "University 1, Department"
+-date: 2015-01-01
+-location: "City, Country"
+----
+-
+-This is a description of a teaching experience. You can use markdown like any other post.
+-
+-Heading 1
+-======
+-
+-Heading 2
+-======
+-
+-Heading 3
+-======

@@ -12,7 +12,7 @@ site_theme               : "default" # Currently available options are "default"
 title                    : "Samuel Haileselassie"
 title_separator          : "-"
 name                     : &name "Samuel Haileselassie"
-description              : &description "Software Engineer II and M.S. Artificial Intelligence student building reliable software, automation systems, and practical AI solutions."
+description              : &description "Software engineer and M.S. Artificial Intelligence student building reliable software, automation systems, and practical AI solutions."
 url                      : https://samuelth47.github.io
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -26,7 +26,7 @@ author:
   avatar           : "profile.png"
   name             : "Samuel Haileselassie"
   pronouns         : # example: "she/her"  
-  bio              : "Software Engineer II and M.S. Artificial Intelligence student"
+  bio              : "Software Engineer and M.S. Artificial Intelligence student"
   location         : "Gilroy, CA"
   employer         : "San Jose State University"
   uri              : # URL

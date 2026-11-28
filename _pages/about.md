@@ -7,19 +7,20 @@ redirect_from:
   - /about.html
 ---
 
-## Software Engineer building reliable, useful systems
+## Software engineer building reliable, useful systems
 
-I am a Software Engineer II and M.S. Artificial Intelligence student at San Jose State University. My experience spans backend and full-stack development, infrastructure automation, deployment tooling, monitoring, and applied AI.
+I'm a software engineer and M.S. Artificial Intelligence student at San Jose State University. My experience spans backend and full-stack development, infrastructure automation, deployment tooling, monitoring, and applied AI.
 
-At Bank of America, I built Django applications, automated VMware infrastructure with Ansible, integrated systems through REST APIs, and designed monitoring dashboards that improved operational response. I enjoy turning manual, error-prone processes into dependable software.
+I spent three years at Bank of America as a Software Engineer II, where I built Django applications that cut manual data entry by about 90%, automated VMware infrastructure with Ansible, integrated systems through REST APIs, and designed Grafana dashboards that cut error response time by 5×. I enjoy turning manual, error-prone processes into dependable software.
 
-I am currently pursuing software engineering and applied AI opportunities where I can contribute to products, platforms, and engineering systems that have measurable impact.
+I'm looking for software engineering and applied AI internships for summer 2027, where I can contribute to products, platforms, and engineering systems that have measurable impact.
 
 ## What I work with
 
 - **Software engineering:** Python, Django, JavaScript, TypeScript, React, REST APIs, SQL
-- **Infrastructure and automation:** Ansible, Docker, VMware, OpenShift, CI/CD, Git
-- **Data and AI:** PostgreSQL, MongoDB, recommendation systems, model evaluation
+- **Infrastructure and automation:** Ansible, Jenkins, Docker, VMware, OpenShift, HashiCorp Vault, CI/CD, Git
+- **Monitoring:** Grafana, Splunk
+- **Data and AI:** PostgreSQL, MongoDB, Redis, recommendation systems, model evaluation
 
 ## Explore my work
 
